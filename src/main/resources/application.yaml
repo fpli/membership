@@ -21,7 +21,7 @@ logging:
         membership:
           mapper: info
 
-  spring:
+dubbo:
     application.name: dubbo-spring-boot-starter
     dubbo.server: true
     dubbo.registry: N/A
