@@ -20,3 +20,8 @@ logging:
       sap:
         membership:
           mapper: info
+
+  spring:
+    application.name: dubbo-spring-boot-starter
+    dubbo.server: true
+    dubbo.registry: N/A
