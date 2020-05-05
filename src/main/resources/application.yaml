@@ -22,6 +22,17 @@ logging:
           mapper: info
 
 dubbo:
-    application.name: dubbo-spring-boot-starter
-    dubbo.server: true
-    dubbo.registry: N/A
+    application.name: dubbo-spring-boot-starter-membership-provider
+    application:
+      registries:
+        server: true
+    scan:
+      base-packages: com.sap.membership
+    protocol:
+      name: dubbo
+      port: 12345
+    registry:
+      address: 127.0.0.1
+      port: 2181
+    provider:
+      server: netty4
