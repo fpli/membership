@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sap.membership.trade.mapper.AdministratorOperationRecordDOMapper">
+  <resultMap id="BaseResultMap" type="com.sap.membership.trade.model.AdministratorOperationRecordDO">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="administrator_id" jdbcType="INTEGER" property="administratorId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="operation" jdbcType="VARCHAR" property="operation" />
+  </resultMap>
+  <insert id="insert" parameterType="com.sap.membership.trade.model.AdministratorOperationRecordDO">
+    insert into administrator_operation_record_tbl (id, administrator_id, create_time, 
+      operation)
+    values (#{id,jdbcType=INTEGER}, #{administratorId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{operation,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sap.membership.trade.model.AdministratorOperationRecordDO">
+    insert into administrator_operation_record_tbl
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="administratorId != null">
+        administrator_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="operation != null">
+        operation,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="administratorId != null">
+        #{administratorId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operation != null">
+        #{operation,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sap.membership.trade.mapper.DepositDOMapper">
+  <resultMap id="BaseResultMap" type="com.sap.membership.trade.model.DepositDO">
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="cid" jdbcType="VARCHAR" property="cid" />
+    <result column="rid" jdbcType="VARCHAR" property="rid" />
+    <result column="deposit_amount" jdbcType="DECIMAL" property="depositAmount" />
+    <result column="deposit_state" jdbcType="CHAR" property="depositState" />
+  </resultMap>
+  <insert id="insert" parameterType="com.sap.membership.trade.model.DepositDO">
+    insert into deposit_tbl (name, cid, rid, 
+      deposit_amount, deposit_state)
+    values (#{name,jdbcType=VARCHAR}, #{cid,jdbcType=VARCHAR}, #{rid,jdbcType=VARCHAR}, 
+      #{depositAmount,jdbcType=DECIMAL}, #{depositState,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sap.membership.trade.model.DepositDO">
+    insert into deposit_tbl
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        name,
+      </if>
+      <if test="cid != null">
+        cid,
+      </if>
+      <if test="rid != null">
+        rid,
+      </if>
+      <if test="depositAmount != null">
+        deposit_amount,
+      </if>
+      <if test="depositState != null">
+        deposit_state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cid != null">
+        #{cid,jdbcType=VARCHAR},
+      </if>
+      <if test="rid != null">
+        #{rid,jdbcType=VARCHAR},
+      </if>
+      <if test="depositAmount != null">
+        #{depositAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="depositState != null">
+        #{depositState,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

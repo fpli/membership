@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sap.membership.trade.mapper.CustomerInformationDOMapper">
+  <resultMap id="BaseResultMap" type="com.sap.membership.trade.model.CustomerInformationDO">
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="cid" jdbcType="VARCHAR" property="cid" />
+    <result column="rid" jdbcType="VARCHAR" property="rid" />
+    <result column="consumption" jdbcType="DECIMAL" property="consumption" />
+  </resultMap>
+  <insert id="insert" parameterType="com.sap.membership.trade.model.CustomerInformationDO">
+    insert into customer_information_tbl (name, cid, rid, 
+      consumption)
+    values (#{name,jdbcType=VARCHAR}, #{cid,jdbcType=VARCHAR}, #{rid,jdbcType=VARCHAR}, 
+      #{consumption,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sap.membership.trade.model.CustomerInformationDO">
+    insert into customer_information_tbl
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        name,
+      </if>
+      <if test="cid != null">
+        cid,
+      </if>
+      <if test="rid != null">
+        rid,
+      </if>
+      <if test="consumption != null">
+        consumption,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cid != null">
+        #{cid,jdbcType=VARCHAR},
+      </if>
+      <if test="rid != null">
+        #{rid,jdbcType=VARCHAR},
+      </if>
+      <if test="consumption != null">
+        #{consumption,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+</mapper>

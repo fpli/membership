@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sap.membership.trade.mapper.CustomerHistoryInformationDOMapper">
+  <resultMap id="BaseResultMap" type="com.sap.membership.trade.model.CustomerHistoryInformationDO">
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="cid" jdbcType="VARCHAR" property="cid" />
+    <result column="rid" jdbcType="VARCHAR" property="rid" />
+    <result column="department_name" jdbcType="VARCHAR" property="departmentName" />
+    <result column="consumption_style" jdbcType="VARCHAR" property="consumptionStyle" />
+    <result column="deposit_amount" jdbcType="DECIMAL" property="depositAmount" />
+    <result column="deposit_state" jdbcType="CHAR" property="depositState" />
+    <result column="reserve_time" jdbcType="TIMESTAMP" property="reserveTime" />
+    <result column="time_quantum" jdbcType="VARCHAR" property="timeQuantum" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+  </resultMap>
+  <insert id="insert" parameterType="com.sap.membership.trade.model.CustomerHistoryInformationDO">
+    insert into customer_history_information_tbl (name, cid, rid, 
+      department_name, consumption_style, deposit_amount, 
+      deposit_state, reserve_time, time_quantum, 
+      comment)
+    values (#{name,jdbcType=VARCHAR}, #{cid,jdbcType=VARCHAR}, #{rid,jdbcType=VARCHAR}, 
+      #{departmentName,jdbcType=VARCHAR}, #{consumptionStyle,jdbcType=VARCHAR}, #{depositAmount,jdbcType=DECIMAL}, 
+      #{depositState,jdbcType=CHAR}, #{reserveTime,jdbcType=TIMESTAMP}, #{timeQuantum,jdbcType=VARCHAR}, 
+      #{comment,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sap.membership.trade.model.CustomerHistoryInformationDO">
+    insert into customer_history_information_tbl
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        name,
+      </if>
+      <if test="cid != null">
+        cid,
+      </if>
+      <if test="rid != null">
+        rid,
+      </if>
+      <if test="departmentName != null">
+        department_name,
+      </if>
+      <if test="consumptionStyle != null">
+        consumption_style,
+      </if>
+      <if test="depositAmount != null">
+        deposit_amount,
+      </if>
+      <if test="depositState != null">
+        deposit_state,
+      </if>
+      <if test="reserveTime != null">
+        reserve_time,
+      </if>
+      <if test="timeQuantum != null">
+        time_quantum,
+      </if>
+      <if test="comment != null">
+        comment,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cid != null">
+        #{cid,jdbcType=VARCHAR},
+      </if>
+      <if test="rid != null">
+        #{rid,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentName != null">
+        #{departmentName,jdbcType=VARCHAR},
+      </if>
+      <if test="consumptionStyle != null">
+        #{consumptionStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="depositAmount != null">
+        #{depositAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="depositState != null">
+        #{depositState,jdbcType=CHAR},
+      </if>
+      <if test="reserveTime != null">
+        #{reserveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="timeQuantum != null">
+        #{timeQuantum,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null">
+        #{comment,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

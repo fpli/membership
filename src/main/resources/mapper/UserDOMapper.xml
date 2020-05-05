@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sap.membership.trade.mapper.UserDOMapper">
+  <resultMap id="BaseResultMap" type="com.sap.membership.trade.model.UserDO">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="card_no" jdbcType="VARCHAR" property="cardNo" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="mobile_phone" jdbcType="VARCHAR" property="mobilePhone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="zipcode" jdbcType="VARCHAR" property="zipcode" />
+    <result column="introduce_name" jdbcType="VARCHAR" property="introduceName" />
+    <result column="introduce_card_no" jdbcType="VARCHAR" property="introduceCardNo" />
+    <result column="agency_card_no" jdbcType="VARCHAR" property="agencyCardNo" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="activation_time" jdbcType="TIMESTAMP" property="activationTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="user_type" jdbcType="INTEGER" property="userType" />
+    <result column="integral" jdbcType="INTEGER" property="integral" />
+    <result column="enough" jdbcType="INTEGER" property="enough" />
+    <result column="login_count" jdbcType="INTEGER" property="loginCount" />
+    <result column="last_login_time" jdbcType="TIMESTAMP" property="lastLoginTime" />
+    <result column="login_ip" jdbcType="VARCHAR" property="loginIp" />
+  </resultMap>
+  <insert id="insert" parameterType="com.sap.membership.trade.model.UserDO">
+    insert into user_tbl (id, username, password, 
+      card_no, real_name, telephone, 
+      mobile_phone, email, address, 
+      zipcode, introduce_name, introduce_card_no, 
+      agency_card_no, status, activation_time, 
+      modify_time, user_type, integral, 
+      enough, login_count, last_login_time, 
+      login_ip)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{cardNo,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, 
+      #{mobilePhone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{zipcode,jdbcType=VARCHAR}, #{introduceName,jdbcType=VARCHAR}, #{introduceCardNo,jdbcType=VARCHAR}, 
+      #{agencyCardNo,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{activationTime,jdbcType=TIMESTAMP}, 
+      #{modifyTime,jdbcType=TIMESTAMP}, #{userType,jdbcType=INTEGER}, #{integral,jdbcType=INTEGER}, 
+      #{enough,jdbcType=INTEGER}, #{loginCount,jdbcType=INTEGER}, #{lastLoginTime,jdbcType=TIMESTAMP}, 
+      #{loginIp,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sap.membership.trade.model.UserDO">
+    insert into user_tbl
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="cardNo != null">
+        card_no,
+      </if>
+      <if test="realName != null">
+        real_name,
+      </if>
+      <if test="telephone != null">
+        telephone,
+      </if>
+      <if test="mobilePhone != null">
+        mobile_phone,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="zipcode != null">
+        zipcode,
+      </if>
+      <if test="introduceName != null">
+        introduce_name,
+      </if>
+      <if test="introduceCardNo != null">
+        introduce_card_no,
+      </if>
+      <if test="agencyCardNo != null">
+        agency_card_no,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="activationTime != null">
+        activation_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+      <if test="userType != null">
+        user_type,
+      </if>
+      <if test="integral != null">
+        integral,
+      </if>
+      <if test="enough != null">
+        enough,
+      </if>
+      <if test="loginCount != null">
+        login_count,
+      </if>
+      <if test="lastLoginTime != null">
+        last_login_time,
+      </if>
+      <if test="loginIp != null">
+        login_ip,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="cardNo != null">
+        #{cardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilePhone != null">
+        #{mobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="zipcode != null">
+        #{zipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="introduceName != null">
+        #{introduceName,jdbcType=VARCHAR},
+      </if>
+      <if test="introduceCardNo != null">
+        #{introduceCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="agencyCardNo != null">
+        #{agencyCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="activationTime != null">
+        #{activationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userType != null">
+        #{userType,jdbcType=INTEGER},
+      </if>
+      <if test="integral != null">
+        #{integral,jdbcType=INTEGER},
+      </if>
+      <if test="enough != null">
+        #{enough,jdbcType=INTEGER},
+      </if>
+      <if test="loginCount != null">
+        #{loginCount,jdbcType=INTEGER},
+      </if>
+      <if test="lastLoginTime != null">
+        #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loginIp != null">
+        #{loginIp,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sap.membership.trade.mapper.ReserveDOMapper">
+  <resultMap id="BaseResultMap" type="com.sap.membership.trade.model.ReserveDO">
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="cid" jdbcType="VARCHAR" property="cid" />
+    <result column="rid" jdbcType="VARCHAR" property="rid" />
+    <result column="reserve_time" jdbcType="TIMESTAMP" property="reserveTime" />
+    <result column="time_quantum" jdbcType="VARCHAR" property="timeQuantum" />
+  </resultMap>
+  <insert id="insert" parameterType="com.sap.membership.trade.model.ReserveDO">
+    insert into reserve_tbl (name, cid, rid, 
+      reserve_time, time_quantum)
+    values (#{name,jdbcType=VARCHAR}, #{cid,jdbcType=VARCHAR}, #{rid,jdbcType=VARCHAR}, 
+      #{reserveTime,jdbcType=TIMESTAMP}, #{timeQuantum,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sap.membership.trade.model.ReserveDO">
+    insert into reserve_tbl
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        name,
+      </if>
+      <if test="cid != null">
+        cid,
+      </if>
+      <if test="rid != null">
+        rid,
+      </if>
+      <if test="reserveTime != null">
+        reserve_time,
+      </if>
+      <if test="timeQuantum != null">
+        time_quantum,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cid != null">
+        #{cid,jdbcType=VARCHAR},
+      </if>
+      <if test="rid != null">
+        #{rid,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveTime != null">
+        #{reserveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="timeQuantum != null">
+        #{timeQuantum,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

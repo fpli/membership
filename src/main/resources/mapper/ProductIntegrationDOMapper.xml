@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sap.membership.trade.mapper.ProductIntegrationDOMapper">
+  <resultMap id="BaseResultMap" type="com.sap.membership.trade.model.ProductIntegrationDO">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="sort_num" jdbcType="INTEGER" property="sortNum" />
+    <result column="third_id" jdbcType="INTEGER" property="thirdId" />
+    <result column="second_id" jdbcType="INTEGER" property="secondId" />
+    <result column="base_id" jdbcType="INTEGER" property="baseId" />
+    <result column="price" jdbcType="INTEGER" property="price" />
+    <result column="price2" jdbcType="INTEGER" property="price2" />
+    <result column="integral_scale" jdbcType="INTEGER" property="integralScale" />
+    <result column="integral" jdbcType="INTEGER" property="integral" />
+    <result column="thumbnail" jdbcType="VARCHAR" property="thumbnail" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+  </resultMap>
+  <insert id="insert" parameterType="com.sap.membership.trade.model.ProductIntegrationDO">
+    insert into product_integration_tbl (id, title, sort_num, 
+      third_id, second_id, base_id, 
+      price, price2, integral_scale, 
+      integral, thumbnail, url, 
+      num)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{sortNum,jdbcType=INTEGER}, 
+      #{thirdId,jdbcType=INTEGER}, #{secondId,jdbcType=INTEGER}, #{baseId,jdbcType=INTEGER}, 
+      #{price,jdbcType=INTEGER}, #{price2,jdbcType=INTEGER}, #{integralScale,jdbcType=INTEGER}, 
+      #{integral,jdbcType=INTEGER}, #{thumbnail,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{num,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sap.membership.trade.model.ProductIntegrationDO">
+    insert into product_integration_tbl
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="sortNum != null">
+        sort_num,
+      </if>
+      <if test="thirdId != null">
+        third_id,
+      </if>
+      <if test="secondId != null">
+        second_id,
+      </if>
+      <if test="baseId != null">
+        base_id,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="price2 != null">
+        price2,
+      </if>
+      <if test="integralScale != null">
+        integral_scale,
+      </if>
+      <if test="integral != null">
+        integral,
+      </if>
+      <if test="thumbnail != null">
+        thumbnail,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="num != null">
+        num,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="sortNum != null">
+        #{sortNum,jdbcType=INTEGER},
+      </if>
+      <if test="thirdId != null">
+        #{thirdId,jdbcType=INTEGER},
+      </if>
+      <if test="secondId != null">
+        #{secondId,jdbcType=INTEGER},
+      </if>
+      <if test="baseId != null">
+        #{baseId,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=INTEGER},
+      </if>
+      <if test="price2 != null">
+        #{price2,jdbcType=INTEGER},
+      </if>
+      <if test="integralScale != null">
+        #{integralScale,jdbcType=INTEGER},
+      </if>
+      <if test="integral != null">
+        #{integral,jdbcType=INTEGER},
+      </if>
+      <if test="thumbnail != null">
+        #{thumbnail,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null">
+        #{num,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

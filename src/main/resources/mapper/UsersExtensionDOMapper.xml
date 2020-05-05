@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sap.membership.trade.mapper.UsersExtensionDOMapper">
+  <resultMap id="BaseResultMap" type="com.sap.membership.trade.model.UsersExtensionDO">
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="birthday" jdbcType="VARCHAR" property="birthday" />
+    <result column="identity_card_no" jdbcType="VARCHAR" property="identityCardNo" />
+    <result column="education" jdbcType="INTEGER" property="education" />
+    <result column="occupation" jdbcType="INTEGER" property="occupation" />
+    <result column="salary" jdbcType="INTEGER" property="salary" />
+    <result column="access" jdbcType="INTEGER" property="access" />
+    <result column="onoursite" jdbcType="INTEGER" property="onoursite" />
+    <result column="used_product" jdbcType="VARCHAR" property="usedProduct" />
+    <result column="proposal" jdbcType="VARCHAR" property="proposal" />
+    <result column="service_request" jdbcType="VARCHAR" property="serviceRequest" />
+    <result column="apply_time" jdbcType="TIMESTAMP" property="applyTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.sap.membership.trade.model.UsersExtensionDO">
+    insert into users_extension_tbl (user_id, sex, birthday, 
+      identity_card_no, education, occupation, 
+      salary, access, onoursite, 
+      used_product, proposal, service_request, 
+      apply_time)
+    values (#{userId,jdbcType=INTEGER}, #{sex,jdbcType=INTEGER}, #{birthday,jdbcType=VARCHAR}, 
+      #{identityCardNo,jdbcType=VARCHAR}, #{education,jdbcType=INTEGER}, #{occupation,jdbcType=INTEGER}, 
+      #{salary,jdbcType=INTEGER}, #{access,jdbcType=INTEGER}, #{onoursite,jdbcType=INTEGER}, 
+      #{usedProduct,jdbcType=VARCHAR}, #{proposal,jdbcType=VARCHAR}, #{serviceRequest,jdbcType=VARCHAR}, 
+      #{applyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sap.membership.trade.model.UsersExtensionDO">
+    insert into users_extension_tbl
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="identityCardNo != null">
+        identity_card_no,
+      </if>
+      <if test="education != null">
+        education,
+      </if>
+      <if test="occupation != null">
+        occupation,
+      </if>
+      <if test="salary != null">
+        salary,
+      </if>
+      <if test="access != null">
+        access,
+      </if>
+      <if test="onoursite != null">
+        onoursite,
+      </if>
+      <if test="usedProduct != null">
+        used_product,
+      </if>
+      <if test="proposal != null">
+        proposal,
+      </if>
+      <if test="serviceRequest != null">
+        service_request,
+      </if>
+      <if test="applyTime != null">
+        apply_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardNo != null">
+        #{identityCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null">
+        #{education,jdbcType=INTEGER},
+      </if>
+      <if test="occupation != null">
+        #{occupation,jdbcType=INTEGER},
+      </if>
+      <if test="salary != null">
+        #{salary,jdbcType=INTEGER},
+      </if>
+      <if test="access != null">
+        #{access,jdbcType=INTEGER},
+      </if>
+      <if test="onoursite != null">
+        #{onoursite,jdbcType=INTEGER},
+      </if>
+      <if test="usedProduct != null">
+        #{usedProduct,jdbcType=VARCHAR},
+      </if>
+      <if test="proposal != null">
+        #{proposal,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceRequest != null">
+        #{serviceRequest,jdbcType=VARCHAR},
+      </if>
+      <if test="applyTime != null">
+        #{applyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

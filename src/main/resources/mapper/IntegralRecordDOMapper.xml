@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sap.membership.trade.mapper.IntegralRecordDOMapper">
+  <resultMap id="BaseResultMap" type="com.sap.membership.trade.model.IntegralRecordDO">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="integral" jdbcType="INTEGER" property="integral" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="is_add" jdbcType="INTEGER" property="isAdd" />
+    <result column="record_time" jdbcType="TIMESTAMP" property="recordTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.sap.membership.trade.model.IntegralRecordDO">
+    insert into integral_record_tbl (id, user_id, integral, 
+      content, is_add, record_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{integral,jdbcType=INTEGER}, 
+      #{content,jdbcType=VARCHAR}, #{isAdd,jdbcType=INTEGER}, #{recordTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sap.membership.trade.model.IntegralRecordDO">
+    insert into integral_record_tbl
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="integral != null">
+        integral,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="isAdd != null">
+        is_add,
+      </if>
+      <if test="recordTime != null">
+        record_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="integral != null">
+        #{integral,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="isAdd != null">
+        #{isAdd,jdbcType=INTEGER},
+      </if>
+      <if test="recordTime != null">
+        #{recordTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

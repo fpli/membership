@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sap.membership.trade.mapper.IntegralRuleDOMapper">
+  <resultMap id="BaseResultMap" type="com.sap.membership.trade.model.IntegralRuleDO">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="mark" jdbcType="VARCHAR" property="mark" />
+    <result column="integral" jdbcType="INTEGER" property="integral" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="over_time" jdbcType="DATE" property="overTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.sap.membership.trade.model.IntegralRuleDO">
+    insert into integral_rule_tbl (id, mark, integral, 
+      content, state, over_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{mark,jdbcType=VARCHAR}, #{integral,jdbcType=INTEGER}, 
+      #{content,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, #{overTime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sap.membership.trade.model.IntegralRuleDO">
+    insert into integral_rule_tbl
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="mark != null">
+        mark,
+      </if>
+      <if test="integral != null">
+        integral,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="overTime != null">
+        over_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="mark != null">
+        #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="integral != null">
+        #{integral,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="overTime != null">
+        #{overTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+</mapper>
