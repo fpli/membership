@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/membership
+    url: jdbc:mysql://localhost:3306/membership?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
     username: root
     password: lfpxtt12
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -34,5 +34,3 @@ dubbo:
     registry:
       address: 127.0.0.1
       port: 2181
-    provider:
-      server: netty4
