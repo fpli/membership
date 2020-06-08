@@ -3,6 +3,7 @@ package com.sap.membership.trade.model;
 import java.math.BigDecimal;
 
 public class DepartmentConsumptionDO {
+
     private String name;
 
     private String cid;

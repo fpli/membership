@@ -1,6 +1,10 @@
 package com.sap.membership.trade.model;
 
+/**
+ * 介绍人记录
+ */
 public class IntroduceRecordDO {
+
     private Integer id;
 
     private Integer userId;

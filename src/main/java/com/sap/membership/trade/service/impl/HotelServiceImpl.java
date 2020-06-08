@@ -6,4 +6,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class HotelServiceImpl implements HotelServiceI {
 
+    @Override
+    public Object reserve() {
+        return null;
+    }
 }

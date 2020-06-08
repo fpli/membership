@@ -2,7 +2,11 @@ package com.sap.membership.trade.model;
 
 import java.util.Date;
 
+/**
+ * 预订信息
+ */
 public class ReserveDO {
+
     private String name;
 
     private String cid;

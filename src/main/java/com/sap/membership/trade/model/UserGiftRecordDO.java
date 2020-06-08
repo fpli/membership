@@ -2,6 +2,9 @@ package com.sap.membership.trade.model;
 
 import java.util.Date;
 
+/**
+ * 会员兑换礼品记录信息
+ */
 public class UserGiftRecordDO {
     private Integer id;
 

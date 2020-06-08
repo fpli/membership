@@ -1,6 +1,10 @@
 package com.sap.membership.trade.model;
 
+/**
+ * 产品积分
+ */
 public class ProductIntegrationDO {
+
     private Integer id;
 
     private String title;

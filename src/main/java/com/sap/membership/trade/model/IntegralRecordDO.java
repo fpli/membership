@@ -2,7 +2,11 @@ package com.sap.membership.trade.model;
 
 import java.util.Date;
 
+/**
+ * 积分记录
+ */
 public class IntegralRecordDO {
+
     private Integer id;
 
     private Integer userId;

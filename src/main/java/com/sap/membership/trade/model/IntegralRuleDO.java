@@ -2,7 +2,11 @@ package com.sap.membership.trade.model;
 
 import java.util.Date;
 
+/**
+ * 积分规则
+ */
 public class IntegralRuleDO {
+
     private Integer id;
 
     private String mark;

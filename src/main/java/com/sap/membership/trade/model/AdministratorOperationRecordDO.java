@@ -2,6 +2,9 @@ package com.sap.membership.trade.model;
 
 import java.util.Date;
 
+/**
+ * 管理员操作记录信息
+ */
 public class AdministratorOperationRecordDO {
     private Integer id;
 

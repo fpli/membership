@@ -3,7 +3,11 @@ package com.sap.membership.trade.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * 客户历史信息
+ */
 public class CustomerHistoryInformationDO {
+
     private String name;
 
     private String cid;

@@ -1,6 +1,10 @@
 package com.sap.membership.trade.model;
 
+/**
+ * 会员卡信息
+ */
 public class UserCardDO {
+
     private Integer id;
 
     private String cardNo;

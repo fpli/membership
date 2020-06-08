@@ -2,7 +2,11 @@ package com.sap.membership.trade.model;
 
 import java.math.BigDecimal;
 
+/**
+ * 消费总金额信息
+ */
 public class TotalConsumptionDO {
+
     private String name;
 
     private String cid;

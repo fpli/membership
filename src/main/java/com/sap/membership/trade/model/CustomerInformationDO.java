@@ -2,7 +2,11 @@ package com.sap.membership.trade.model;
 
 import java.math.BigDecimal;
 
+/**
+ * 客户信息
+ */
 public class CustomerInformationDO {
+
     private String name;
 
     private String cid;

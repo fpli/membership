@@ -2,6 +2,9 @@ package com.sap.membership.trade.model;
 
 import java.util.Date;
 
+/**
+ * 会员扩展信息
+ */
 public class UsersExtensionDO {
     private Integer userId;
 

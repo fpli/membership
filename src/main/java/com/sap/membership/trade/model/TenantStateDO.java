@@ -1,5 +1,8 @@
 package com.sap.membership.trade.model;
 
+/**
+ * 客房状态信息
+ */
 public class TenantStateDO {
     private String roomId;
 

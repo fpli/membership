@@ -1,6 +1,10 @@
 package com.sap.membership.trade.model;
 
+/**
+ * 系统元数据信息
+ */
 public class MetadataDO {
+
     private Integer id;
 
     private Integer sortNum;

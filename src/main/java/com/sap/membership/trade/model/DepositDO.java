@@ -2,7 +2,11 @@ package com.sap.membership.trade.model;
 
 import java.math.BigDecimal;
 
+/**
+ * 押金信息
+ */
 public class DepositDO {
+
     private String name;
 
     private String cid;
