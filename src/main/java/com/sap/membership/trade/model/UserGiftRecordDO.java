@@ -6,6 +6,7 @@ import java.util.Date;
  * 会员兑换礼品记录信息
  */
 public class UserGiftRecordDO {
+
     private Integer id;
 
     private Integer userId;

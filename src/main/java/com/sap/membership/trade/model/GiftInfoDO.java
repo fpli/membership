@@ -4,6 +4,7 @@ package com.sap.membership.trade.model;
  * 礼品信息
  */
 public class GiftInfoDO {
+
     private Integer id;
 
     private String title;

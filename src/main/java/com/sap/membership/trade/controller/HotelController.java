@@ -18,7 +18,7 @@ public class HotelController {
     private ReserveDOMapper reserveDOMapper;
 
     /**
-     * 预订酒店房间
+     * 客户预订酒店房间
      * @param cid    身份证号码
      * @param name   姓名
      * @param amount 付款金额

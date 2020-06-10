@@ -6,6 +6,7 @@ import java.util.Date;
  * 管理员操作记录信息
  */
 public class AdministratorOperationRecordDO {
+    
     private Integer id;
 
     private Integer administratorId;
