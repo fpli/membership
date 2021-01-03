@@ -6,6 +6,7 @@ import java.util.Date;
  * 会员扩展信息
  */
 public class UsersExtensionDO {
+    
     private Integer userId;
 
     private Integer sex;

@@ -4,6 +4,7 @@ package com.sap.membership.trade.model;
  * 会员类型信息
  */
 public class UserTypeDO {
+
     private Integer id;
 
     private String typeName;

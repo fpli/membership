@@ -6,6 +6,7 @@ import java.util.Date;
  * 会员购买产品信息
  */
 public class UserProductRecordDO {
+
     private Integer id;
 
     private Integer userId;
